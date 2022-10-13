@@ -1,0 +1,56 @@
+﻿@model SaveUserAccount
+@{
+    ViewData["Title"] = "Create Account";
+}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 col">
+
+            <h1 class="display-5">Create New Account</h1>
+            <hr />
+            <form method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6 mt-4">
+                        <input class="form-control" asp-for="Name" placeholder="First Name" />
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <input class="form-control" asp-for="PhoneNumber" placeholder="Phone Number" />
+                        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-4">
+                        <input class="form-control" asp-for="Email" placeholder="Email" />
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                        @if(ViewBag.Error != null)
+                        {
+                            <span class="text-danger">@ViewBag.Error</span>   
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-4">
+                        <div class="">
+                            <input class="form-control" asp-for="Password" placeholder="Password" />
+                        </div>
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <div class="">
+                            <input class="form-control" asp-for="ConfirmPassword" placeholder="Confirm Password" />
+                        </div>
+                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">Save</button>
+@*                    <a class="btn btn-dark" asp-controller="Users" asp-action="GetAllStudents">Back</a>
+*@                </div>
+            </form>
+            <div class="mt-4 bg-danger p-2 text-white" asp-validation-summary="ModelOnly"></div>
+        </div>
+    </div>
+</div>
+

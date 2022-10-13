@@ -1,0 +1,23 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Medicines";
+    var photoPath = "~/images/";
+}
+<h1>@Model.Name's Medicines</h1>
+
+<div class="card-group">
+        @foreach (var medicine in Model.Medicines)
+        {
+            
+            <div class="card m-3" style="min-width:18rem; max-width:30.5%;">
+                <div class="card-header">
+                    <h3>@medicine.Name</h3>
+                </div>
+                <img class="card-img-top imageThumbnail" src="@photoPath@medicine.ImageUrl" asp-append-version="true" />
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" asp-controller="Medicines" asp-action="Details" asp-route-id="@medicine.Id">View</a>
+                </div>
+            </div>
+        }
+    </div>
+

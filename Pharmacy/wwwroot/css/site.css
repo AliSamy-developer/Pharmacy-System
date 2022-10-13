@@ -1,0 +1,25 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.landing {
+    width: 100%;
+    height: calc(100vh - 30px);
+    background: url("../images/med.png");
+    background-size: cover;
+    position: relative;
+}

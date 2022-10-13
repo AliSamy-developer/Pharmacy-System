@@ -1,0 +1,37 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 mb-5">
+            <h1 class="display-5">Log In</h1>
+            <hr />
+            @if (!String.IsNullOrEmpty(ViewBag.LoginFaild))
+            {
+                <div class="alert alert-danger">
+                    @ViewBag.LoginFaild
+                </div>
+            }
+            <form method="post">
+                <div class="form-floating mt-4">
+                    <input class="form-control" asp-for="Email" placeholder="Email Address" />
+                    <label asp-for="Email">Email Address</label>
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="form-floating mt-4">
+                    <input class="form-control" asp-for="Password" placeholder="Password" />
+                    <label asp-for="Password">Password</label>
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div class="mt-4 d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">Login</button>
+                   @* <a class="btn btn-dark" asp-controller="Home" asp-action="Index">Back</a>*@
+                </div>
+            </form>
+            <div class="mt-4 bg-danger p-2 text-white" asp-validation-summary="ModelOnly"></div>
+        </div>
+        
+    </div>
+</div>
+

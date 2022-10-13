@@ -1,0 +1,61 @@
+﻿@model MedicineVM
+@{
+    ViewData["Title"] = "Create Medicine";
+}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-10 col">
+
+            <h1 class="display-5">Create New Medicine</h1>
+            <hr />
+            <form method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="form-floating col-md-6 mt-4 ps-0">
+                        <input class="form-control" asp-for="Name" placeholder="Medicine Name" />
+                        <label asp-for="Name">Medicine Name</label>
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-floating col-md-6 mt-4 ps-0">
+                        <input class="form-control" asp-for="Description" placeholder="Description" />
+                        <label asp-for="Description">Description</label>
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-floating col-md-6 mt-4 ps-0">
+                        <input type="number" class="form-control" asp-for="TabletsNumber"
+                        placeholder="Tablets Number" />
+                        <label asp-for="TabletsNumber">Tablets Number</label>
+                        <span class="text-danger" asp-validation-for="TabletsNumber"></span>
+                    </div>
+                    <div class="form-floating col-md-6 mt-4 ps-0">
+                        <input class="form-control" asp-for="Price" placeholder="Price" />
+                        <label asp-for="Price">Price</label>
+                        <span class="text-danger" asp-validation-for="Price"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label asp-for="CategoryId">Category</label>
+                    <select class="form-control" asp-for="CategoryId" 
+                    asp-items="@(new SelectList(ViewBag.AllDepartments,"Id","Name"))">
+                        <option disabled selected>Select...</option>
+                    </select>
+                    <span asp-validation-for="CategoryId"></span>
+                </div>
+                <div class="row">
+                    <div class="ps-0 mt-4">
+                        <label asp-for="ImageFile"></label>
+                        <input class="form-control" asp-for="ImageFile"/>
+                        <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <a class="btn btn-outline-dark" asp-controller="Medicines" asp-action="ListMedicines">Back</a>
+                </div>
+            </form>
+            <div class="mt-4 bg-danger p-2 text-white" asp-validation-summary="ModelOnly"></div>
+        </div>
+    </div>
+</div>

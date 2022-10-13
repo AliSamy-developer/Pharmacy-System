@@ -1,0 +1,27 @@
+﻿@model CreateRoleVM
+
+@{ 
+    ViewData["Title"] = "Create Role";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 col">
+
+            <h1 class="display-5">Create New Role</h1>
+            <hr />
+
+            <form method="post">
+                <div class="form-group">
+                    <input asp-for="Name" class="form-control" placeholder="Role Name"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+                    <button class="btn btn-success">Save</button>
+                    <a class="btn btn-dark" asp-controller="Roles" asp-action="ListRoles">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

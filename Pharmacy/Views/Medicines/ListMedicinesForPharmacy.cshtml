@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "List Of Medicines";
+}
+<link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+
+<div class="container mt-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <h1 class="display-5">Medicines</h1>
+        <a class="btn btn-primary" asp-controller="Medicines" asp-action="Create">Create Medicine <i class="fas fa-plus-circle"></i></a>
+    </div>
+    <hr />
+    <div class="table-responsive">
+        <table class="table w-100 table-borderless table-striped" id="medicinesTable" data-page-length="10">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Tablets</th>
+                    <th>Price</th>
+                    <th>Category Id</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+@section Scripts{
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="~/js/medicinesDataTable.js"></script>
+}

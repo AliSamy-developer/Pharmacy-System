@@ -1,0 +1,36 @@
+﻿@model CategoryVM
+@{
+    ViewData["Title"] = "Edit Category";
+}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-10 col">
+
+            <h1 class="display-5">Edit Medicine</h1>
+            <hr />
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="ImageUrl" />
+                <div class="row">
+                    <div class="form-floating col-md-6 mt-4 ps-0">
+                        <input class="form-control" asp-for="Name" placeholder="Category Name" />
+                        <label asp-for="Name">Category Name</label>
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ps-0 mt-4">
+                        <label asp-for="ImageFile"></label>
+                        <input class="form-control" asp-for="ImageFile"/>
+                        <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <a class="btn btn-outline-dark" asp-controller="Medicines" asp-action="ListMedicines">Back</a>
+                </div>
+            </form>
+            <div class="mt-4 bg-danger p-2 text-white" asp-validation-summary="ModelOnly"></div>
+        </div>
+    </div>
+</div>

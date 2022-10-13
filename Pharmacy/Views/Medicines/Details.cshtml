@@ -1,0 +1,49 @@
+﻿@using Pharmacy.Data
+@model Medicine
+@{
+    ViewData["Title"] = "Details";
+    var photoPath = "~/images/" + (Model.ImageUrl);
+}
+<div class="container">
+    <h1 class="mt-2">Details</h1>
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header"    >
+                <h1>@Model.Name</h1>
+            </div>
+            <div class="card-body text-center">
+                <img class="card-img-top" src="@photoPath" asp-append-version="true" />
+                <h4>Name : @Model.Name</h4>
+                <h4>Description : @Model.Description</h4>
+                <h4> Tablets : @Model.TabletsNumber</h4>
+                <h4> Price : @Model.Price EGP</h4>
+                <h4> Category : @Model.Category.Name</h4>
+            </div>
+            <div class="card-footer text-center">
+                    @if (User.IsInRole(Roles.Customer.ToString()))
+                    {
+                        <a asp-controller="Medicines" asp-action="ListMedicinesForCustomer" class="btn btn-primary">back</a>
+                    }
+                    @if (User.IsInRole(Roles.Pharmacy.ToString()))
+                    {
+                         <a asp-controller="Medicines" asp-action="ListMedicinesForPharmacy" class="btn btn-primary">back</a>
+                <a asp-controller="Medicines" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary m-1">Edit</a>
+                <button id="@Model.Id" class="btn btn-danger" onclick="deleteMedicine(@Model.Id)">
+                                
+                                <div class="spinner-border spinner-border-sm d-none" role="status" id="@Model.Id">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+                            <div class="spinner-border text-danger spinner-border-sm d-none" role="status" id="deleteSpinner">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                    }
+                   
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="~/js/site.js"></script>
