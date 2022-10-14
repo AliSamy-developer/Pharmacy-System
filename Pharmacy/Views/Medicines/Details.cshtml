@@ -31,7 +31,7 @@
                          <a asp-controller="Medicines" asp-action="ListMedicinesForPharmacy" class="btn btn-primary">back</a>
                 <a asp-controller="Medicines" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary m-1">Edit</a>
                 <button id="@Model.Id" class="btn btn-danger" onclick="deleteMedicine(@Model.Id)">
-                                
+                                <i class="fas fa-trash"></i>
                                 <div class="spinner-border spinner-border-sm d-none" role="status" id="@Model.Id">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>

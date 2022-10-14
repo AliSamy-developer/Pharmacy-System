@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Pharmacy.Data;
 using Pharmacy.Models;
 using Pharmacy.Services;
 using Pharmacy.ViewModels;
@@ -14,14 +15,16 @@ namespace Pharmacy.Controllers
         private readonly IGenericServices<Category> _deptService;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
+        private readonly ApplicationDbContext _context;
 
         public MedicinesController(IGenericServices<Medicine> medService, IMapper mapper,
-            IWebHostEnvironment env, IGenericServices<Category> deptService)
+            IWebHostEnvironment env, IGenericServices<Category> deptService, ApplicationDbContext context)
         {
             _medService = medService;
             _mapper = mapper;
             _env = env;
             _deptService = deptService;
+            _context = context;
         }
         [HttpGet("index")]
 
@@ -35,9 +38,41 @@ namespace Pharmacy.Controllers
             return View();
         }
         [HttpGet("listOfMedicineForCustomer")]
-        public async Task<ActionResult> ListMedicinesForCustomer()
+        public async Task<ActionResult> ListMedicinesForCustomer(string? search, string? sortType,
+            string? sortOrder, int pageSize = 3,int pageNumber = 1)
         {
-            return View(await _medService.ListAllAsync());
+            IQueryable<Medicine> medicines = _context.medicines.AsQueryable();
+            if (!string.IsNullOrEmpty(search))
+            {
+                search = search.Trim();
+                medicines = _context.medicines.Where(m => m.Name.Contains(search)); 
+            }
+            if (!string.IsNullOrEmpty(sortType) && !string.IsNullOrEmpty(sortOrder))
+            {
+                if (sortType == "Name")
+                {
+                    if (sortOrder == "asc")
+                        medicines = medicines.OrderBy(x => x.Name);
+                    else if (sortOrder == "desc")
+                        medicines = medicines.OrderByDescending(x => x.Name);
+                }
+                else if(sortType == "Price")
+                {
+                    if (sortOrder == "asc")
+                    {
+                        medicines = medicines.OrderBy(x => x.Price);
+                    }
+                    else if (sortOrder == "desc")
+                        medicines = medicines.OrderByDescending(x => x.Price);
+                }
+            }
+            medicines = medicines.Skip(pageSize *(pageNumber - 1)).Take(pageSize);
+            double pageCount = (double)((decimal)this._context.medicines.Count() / Convert.ToDecimal(pageSize));
+            ViewBag.CurrentSearch = search;
+            ViewBag.pageSize = pageSize;
+            ViewBag.pageNumber = pageNumber;
+            ViewBag.pageCount = pageCount;
+            return View(medicines);
         }
         [HttpGet("create")]
         public async Task<ActionResult> Create()
@@ -58,7 +93,7 @@ namespace Pharmacy.Controllers
                 var medicine = _mapper.Map<Medicine>(model);
                 var result = await _medService.Create(medicine);
                 if (result)
-                    return RedirectToAction("ListMedicines");
+                    return RedirectToAction("ListMedicinesForPharmacy");
             }
             ViewBag.AllDepartments = _deptService.ListAllAsync();
             return View(model);
@@ -74,7 +109,7 @@ namespace Pharmacy.Controllers
         }
         [ValidateAntiForgeryToken]
         [HttpPost("edit/{id}")]
-        public async Task<ActionResult> Edit(int id, [Bind("Id,Name,TabletsNumber,Price,Description,ImageFile,ImageUrl,CategoryId")] MedicineVM model)
+        public async Task<ActionResult> Edit(int id, [Bind("Id,Name,TabletsNumber,Price,Description,ImageFile,ImageUrl,CategoryId")] EditMedicineVM model)
         {
             if (ModelState.IsValid)
             {
@@ -86,13 +121,13 @@ namespace Pharmacy.Controllers
                             "images", model.ImageUrl);
                     if (System.IO.File.Exists(filePath))
                         System.IO.File.Delete(filePath);
-                    model.ImageUrl = ProcessUploadedFile(model);
+                    model.ImageUrl = EditProcessUploadedFile(model);
 
                 }
                 var medicine = _mapper.Map<Medicine>(model);
                 var result = await _medService.Update(medicine);
                 if (result)
-                    return RedirectToAction("ListMedicines");
+                    return RedirectToAction("ListMedicinesForPharmacy");
             }
             return View(model);
         }
@@ -122,6 +157,23 @@ namespace Pharmacy.Controllers
 
         }
         private string ProcessUploadedFile(MedicineVM model)
+        {
+            string uniqueFileName = null;
+            if (model.ImageFile != null)
+            {
+                string uploadsFolder = Path.Combine(_env.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageFile.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.ImageFile.CopyTo(fileStream);
+                }
+
+            }
+
+            return uniqueFileName;
+        }
+        private string EditProcessUploadedFile(EditMedicineVM model)
         {
             string uniqueFileName = null;
             if (model.ImageFile != null)

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Pharmacy.Data;
+using Pharmacy.Models;
 using System.Linq.Expressions;
 
 namespace Pharmacy.Services
@@ -62,6 +63,7 @@ namespace Pharmacy.Services
 
             return await query.ToListAsync();
         }
+
 
         public async Task<bool> Update(T entity)
         {

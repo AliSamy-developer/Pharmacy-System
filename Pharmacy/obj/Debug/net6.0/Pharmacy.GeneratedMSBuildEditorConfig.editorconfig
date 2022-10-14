@@ -8,93 +8,93 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Pharmacy
 build_property.RootNamespace = Pharmacy
-build_property.ProjectDir = E:\FCIH\ASP.NET 6\New folder\New folder\Pharmacy\Pharmacy\
+build_property.ProjectDir = E:\FCIH\ASP.NET 6\New folder\New folder\New folder\New folder\New folder\New folder\New folder\New folder\New folder\Pharmacy\Pharmacy\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\FCIH\ASP.NET 6\New folder\New folder\Pharmacy\Pharmacy
+build_property.MSBuildProjectDirectory = E:\FCIH\ASP.NET 6\New folder\New folder\New folder\New folder\New folder\New folder\New folder\New folder\New folder\Pharmacy\Pharmacy
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Accounts/Index.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Accounts/Login.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Accounts/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Accounts/Register.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Accounts/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/Create.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/Edit.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/GetMedicineOfCategory.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/GetMedicineOfCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xHZXRNZWRpY2luZU9mQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/ListCategories.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Categories/ListCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xMaXN0Q2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Home/Index.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Home/Privacy.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/Create.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNpbmVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/Details.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNpbmVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/Edit.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNpbmVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/ListMedicinesForCustomer.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/ListMedicinesForCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNpbmVzXExpc3RNZWRpY2luZXNGb3JDdXN0b21lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/ListMedicinesForPharmacy.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Medicines/ListMedicinesForPharmacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNpbmVzXExpc3RNZWRpY2luZXNGb3JQaGFybWFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Roles/CreateRole.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Roles/CreateRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Roles/ListRoles.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Roles/ListRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcTGlzdFJvbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Shared/Error.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/_ViewImports.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/_ViewStart.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/FCIH/ASP.NET 6/New folder/New folder/Pharmacy/Pharmacy/Views/Shared/_Layout.cshtml]
+[E:/FCIH/ASP.NET 6/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/New folder/Pharmacy/Pharmacy/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-873r5iwzbd

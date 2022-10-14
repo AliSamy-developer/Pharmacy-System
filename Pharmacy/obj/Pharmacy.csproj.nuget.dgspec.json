@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj": {}
+    "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj": {}
   },
   "projects": {
-    "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj": {
+    "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj",
+        "projectUniqueName": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj",
         "projectName": "Pharmacy",
-        "projectPath": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj",
+        "projectPath": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj",
         "packagesPath": "C:\\Users\\Ali Samy\\.nuget\\packages\\",
-        "outputPath": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\Pharmacy\\Pharmacy\\obj\\",
+        "outputPath": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\Pharmacy\\Pharmacy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ali Samy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     }

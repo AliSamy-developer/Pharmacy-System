@@ -10,6 +10,7 @@ namespace Pharmacy.Helpers
         public Mapping()
         {
             CreateMap<MedicineVM, Medicine>().ReverseMap();
+            CreateMap<EditMedicineVM, Medicine>().ReverseMap();
             CreateMap<CategoryVM, Category>().ReverseMap();
             CreateMap<ApplicationUser, SaveUserAccount>().ForMember(m => m.Email, s => s.MapFrom(st => st.UserName)).ReverseMap();
 

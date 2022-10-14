@@ -1,5 +1,5 @@
 ﻿@using Pharmacy.Data
-@model List<Category>
+@model IEnumerable<Category>
 @{
     ViewData["Title"] = "List Of Categories";
     var photoPath = "~/images/";
@@ -9,13 +9,37 @@
     {
         <a class="btn btn-primary" asp-controller="Categories" asp-action="Create">Create Category <i class="fas fa-plus-circle"></i></a>
     }
+    <form method="get" asp-action="ListCategories" class="mb-3 col-3">
+    <div class="input-group">
+        <input class="form-control" type="text" name="search" value="@ViewBag.CurrentSearch" />
+    <button type="submit" class="btn btn-secondary input-group-addon">
+        <i class="bi bi-search"></i>
+    </button>
+    </div>
+    
+</form>
+   <div>
+                    <a class="d-inline-block" asp-action="ListCategories"
+                    asp-route-sortType="Name" asp-route-sortOrder="asc"
+                    asp-route-search="@ViewBag.CurrentSearch"
+                    asp-route-pageSize="@ViewBag.pageSize"
+                    asp-route-pageNumber="@ViewBag.pageNumber">
+                        <i class="bi bi-arrow-up"></i>
+                    </a>                      
+                    <a asp-action="ListCategories" asp-route-sortType="Name"
+                    asp-route-sortOrder="desc" asp-route-search="@ViewBag.CurrentSearch"
+                    asp-route-pageSize="@ViewBag.pageSize"
+                    asp-route-pageNumber="@ViewBag.pageNumber">
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+                </div>
     <div class="card-group">
-            @if(Model.Count == 0)
+            @if(Model.Count() == 0)
             {
                 <div class="alert alert-info pe-5 ps-5">
                     No Categories to show.
                 </div>
-            } 
+            }
         @foreach (var category in Model)
         {  
             <div class="card m-3" style="min-width:18rem; max-width:30.5%;">
@@ -29,7 +53,7 @@
                     {
                         <a class="btn btn-success" asp-controller="Categories" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
                     <button id="@category.Id" class="btn btn-danger" onclick="deleteCategory(@category.Id)">
-                                
+                                <i class="fas fa-trash"></i>
                                 <div class="spinner-border spinner-border-sm d-none" role="status" id="@category.Id">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
@@ -42,5 +66,37 @@
             </div>
         }
     </div>
+    <div class="d-inline-flex">
+    <form method="get" asp-action="ListCategories">
+        <input type="hidden" name="pageSize" value="@ViewBag.pageSize"  />
+        <input id="pageNumbers" type="hidden" name="pageNumber" value="@ViewBag.pageNumber" />
+        <button class="btn btn-secondary me-md-4" onclick="PreviousPage()">
+            Previous
+        </button>
+    </form>
+            <form method="get" asp-action="ListCategories">
+        <input type="hidden" name="pageSize" value="@ViewBag.pageSize"  />
+        <input id="pageNumber" type="hidden" name="pageNumber" value="@ViewBag.pageNumber" />
+        <input id="pageCount" type="hidden" name="pageCount" value="@ViewBag.pageCount" />
+        <button class="btn btn-secondary" onclick="NextPage()">
+            Next
+        </button>
+    </form>
+</div>
 </div>
     <script src="~/js/site.js"></script>
+        @section Scripts{
+        <script>
+function NextPage(pageCount) {
+    if (document.getElementById("pageNumber").value < document.getElementById("pageCount").value) {
+        document.getElementById("pageNumber").value++;
+    }
+}
+function PreviousPage() {
+    if (document.getElementById("pageNumbers").value != 1) {
+        document.getElementById("pageNumbers").value--;
+    }
+}
+
+        </script>
+    }

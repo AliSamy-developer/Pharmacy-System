@@ -1,12 +1,37 @@
 ﻿@using Pharmacy.Data
-@model List<Medicine>
+@model IEnumerable<Medicine>
 @{
     ViewData["Title"] = "List Of Medicines";
     var photoPath = "~/images/";
+    var pageNumber = ViewBag.pageNumber;
 }
 <div class="container mt-4">
+        <form method="get" asp-action="ListMedicinesForCustomer" class="mb-3 col-3">
+    <div class="input-group">
+        <input class="form-control" type="text" name="search" value="@ViewBag.CurrentSearch" />
+    <button type="submit" class="btn btn-secondary input-group-addon">
+        <i class="bi bi-search"></i>
+    </button>
+    </div>
+    
+</form>
+            <div class="">
+                    <a class="d-inline-block" asp-action="ListMedicinesForCustomer"
+                    asp-route-sortType="Name" asp-route-sortOrder="asc"
+                    asp-route-search="@ViewBag.CurrentSearch"
+                    asp-route-pageSize="@ViewBag.pageSize"
+                    asp-route-pageNumber="@ViewBag.pageNumber">
+                        <i class="bi bi-arrow-up"></i>
+                    </a>                      
+                    <a asp-action="ListMedicinesForCustomer" asp-route-sortType="Name"
+                    asp-route-sortOrder="desc" asp-route-search="@ViewBag.CurrentSearch"
+                    asp-route-pageSize="@ViewBag.pageSize"
+                    asp-route-pageNumber="@ViewBag.pageNumber">
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+                </div>
     <div class="card-group">
-            @if(Model.Count == 0)
+            @if(Model.Count() == 0)
             {
             <div class="alert alert-info pe-5 ps-5">
                 No Medicines to show.
@@ -16,6 +41,7 @@
         {
             @foreach (var medicine in Model)
         {  
+
             <div class="card m-3" style="min-width:18rem; max-width:30.5%;">
                 <div class="card-header">
                     <h3>@medicine.Name</h3>
@@ -29,5 +55,39 @@
         } 
         
     </div>
+
+<div class="d-inline-flex">
+    <form method="get" asp-action="ListMedicinesForCustomer">
+        <input type="hidden" name="pageSize" value="@ViewBag.pageSize"  />
+        <input id="pageNumbers" type="hidden" name="pageNumber" value="@ViewBag.pageNumber" />
+        <button class="btn btn-secondary me-md-4" onclick="PreviousPage()">
+            Previous
+        </button>
+    </form>
+            <form method="get" asp-action="ListMedicinesForCustomer">
+        <input type="hidden" name="pageSize" value="@ViewBag.pageSize"  />
+        <input id="pageNumber" type="hidden" name="pageNumber" value="@ViewBag.pageNumber" />
+        <input id="pageCount" type="hidden" name="pageCount" value="@ViewBag.pageCount" />
+        <button class="btn btn-secondary" onclick="NextPage()">
+            Next
+        </button>
+    </form>
 </div>
+    </div>
+   
     <script src="~/js/site.js"></script>
+    @section Scripts{
+        <script>
+function NextPage(pageCount) {
+    if (document.getElementById("pageNumber").value < document.getElementById("pageCount").value) {
+        document.getElementById("pageNumber").value++;
+    }
+}
+function PreviousPage() {
+    if (document.getElementById("pageNumbers").value != 1) {
+        document.getElementById("pageNumbers").value--;
+    }
+}
+
+        </script>
+    }

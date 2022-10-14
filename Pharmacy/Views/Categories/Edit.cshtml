@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-10 col">
 
-            <h1 class="display-5">Edit Medicine</h1>
+            <h1 class="display-5">Edit Category</h1>
             <hr />
             <form method="post" enctype="multipart/form-data">
                 <input type="hidden" asp-for="Id" />
@@ -27,7 +27,7 @@
                 </div>
                 <div class="mt-4 d-flex justify-content-between">
                     <button type="submit" class="btn btn-success">Save</button>
-                    <a class="btn btn-outline-dark" asp-controller="Medicines" asp-action="ListMedicines">Back</a>
+                    <a class="btn btn-outline-dark" asp-controller="Categories" asp-action="ListCategories">Back</a>
                 </div>
             </form>
             <div class="mt-4 bg-danger p-2 text-white" asp-validation-summary="ModelOnly"></div>

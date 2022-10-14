@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Pharmacy.Data;
 using Pharmacy.Models;
 using Pharmacy.Services;
 using Pharmacy.ViewModels;
@@ -14,14 +15,15 @@ namespace Pharmacy.Controllers
         private readonly IGenericServices<Category> _cateService;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
-
+        private readonly ApplicationDbContext _context;
         public CategoriesController(IGenericServices<Medicine> medService,
-            IGenericServices<Category> cateService, IMapper mapper, IWebHostEnvironment env)
+            IGenericServices<Category> cateService, IMapper mapper, IWebHostEnvironment env, ApplicationDbContext context)
         {
             _medService = medService;
             _cateService = cateService;
             _mapper = mapper;
             _env = env;
+            _context = context;
         }
 
 
@@ -30,9 +32,32 @@ namespace Pharmacy.Controllers
             return View();
         }
         [HttpGet("ListOfCategories")]
-        public async Task<ActionResult> ListCategories()
+        public ActionResult ListCategories(string? search, string? sortType,
+            string? sortOrder, int pageSize = 9, int pageNumber = 1)
         {
-            return View(await _cateService.ListAllAsync());
+            IQueryable<Category> categories = _context.Categories.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                search = search.Trim();
+                categories = _context.Categories.Where(m => m.Name.Contains(search));
+            }
+            if (!string.IsNullOrWhiteSpace(sortType) && !string.IsNullOrWhiteSpace(sortOrder))
+            {
+                if (sortType == "Name")
+                {
+                    if (sortOrder == "asc")
+                        categories = categories.OrderBy(m => m.Name);
+                    else if (sortOrder == "desc")
+                        categories = categories.OrderByDescending(m => m.Name);
+                }
+            }
+            categories = categories.Skip(pageSize * (pageNumber - 1)).Take(pageSize);
+            double pageCount = (double)((decimal)this._context.Categories.Count() / Convert.ToDecimal(pageSize));
+            ViewBag.CurrentSearch = search;
+            ViewBag.pageSize = pageSize;
+            ViewBag.pageNumber = pageNumber;
+            ViewBag.pageCount = pageCount;
+            return View(categories); ;
         }
         [HttpGet("create")]
         public ActionResult Create()

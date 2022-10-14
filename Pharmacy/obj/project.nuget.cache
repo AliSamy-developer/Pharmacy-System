@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PXwqQsJXsOaFQXhsIP0SeU22ce6bsAgj5fNUUW5QREjXOuR2uUVS6uTXmoPMnX57bTcpTl+Hr97/YtCzog8fxA==",
+  "dgSpecHash": "7I+PgxXI0Lxnv7Uelw1KygWKlVynsPZxq2td/CGxsUbQR4dl7u3qSofizLfSG7OABFNE8TP0Al+4ZMDrXnd4yQ==",
   "success": true,
-  "projectFilePath": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj",
+  "projectFilePath": "E:\\FCIH\\ASP.NET 6\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\New folder\\Pharmacy\\Pharmacy\\Pharmacy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ali Samy\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Ali Samy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
